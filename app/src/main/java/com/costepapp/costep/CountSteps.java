@@ -4,9 +4,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class CountSteps extends ActionBarActivity {
+    public static Integer STEP_COUNT = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +38,11 @@ public class CountSteps extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void countSteps(View view) {
+        STEP_COUNT++;
+        final TextView counterTV = (TextView) findViewById(R.id.counter);
+        counterTV.setText(STEP_COUNT.toString());
     }
 }
