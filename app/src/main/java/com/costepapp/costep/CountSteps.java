@@ -15,9 +15,20 @@ public class CountSteps extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_count_steps);
+
+        // Initialize the counter to the current step count
+        final TextView counterTV = (TextView) findViewById(R.id.counter);
+        counterTV.setText(STEP_COUNT.toString());
+    }
+
+    public void countSteps(View view) {
+        STEP_COUNT++;
+        final TextView counterTV = (TextView) findViewById(R.id.counter);
+        counterTV.setText(STEP_COUNT.toString());
     }
 
 
+    // Code below handles ActionBar controller
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -33,16 +44,15 @@ public class CountSteps extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            STEP_COUNT = 0;
+            final TextView counterTV = (TextView) findViewById(R.id.counter);
+            counterTV.setText(STEP_COUNT.toString());
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void countSteps(View view) {
-        STEP_COUNT++;
-        final TextView counterTV = (TextView) findViewById(R.id.counter);
-        counterTV.setText(STEP_COUNT.toString());
-    }
+
 }

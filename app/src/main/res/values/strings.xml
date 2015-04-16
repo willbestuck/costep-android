@@ -2,7 +2,7 @@
     <string name="app_name">CoStep</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="intro_message">"Welcome to CoStep! Get out there and get walking!"</string>
+    <string name="action_reset">Reset</string>
+    <string name="intro_message">"Welcome to CoStep. Get walking!"</string>
     <string name="count_button">"Count Steps"</string>
 </resources>
